@@ -342,5 +342,31 @@
   "connectPolygonNetwork": "Please connect to the appropriate Polygon network.",
   "errorConnectRefresh": "Error connecting. Try refreshing the page.",
   "newToMatic": "New to Polygon?",
-  "learnWallet": "Learn about Wallets"
+  "learnWallet": "Learn about Wallets",
+  "twapToInput": "This is the estimated amount you may receive in the TWAP trade. NOTE: this is an ESTIMATE based on the current market price. Actual results will vary depending on the market conditions and the other parameters you select. ",
+  "twapToInputLimitOrder": "This is the estimated amount you may receive in the TWAP trade. NOTE: this is an ESTIMATE based on the limit price and assuming that all trades are executed. Actual results will vary depending on the market conditions and the other parameters you select.",
+  "limitPriceOff": "You have the option to set a “limit price” for your order. If you do not select this option, each trade in your TWAP order will execute at the available market price.",
+  "limitPriceOn": "This sets the lowest price for trades in your TWAP order. Trades will ONLY be executed when this limit price is greater than or equal to the available market price. If this limit price is not available, some trades may not be executed if the limit price is higher than the available market price and your order may only be partially filled. ",
+  "durationInput": "The total time during which the total amount of individual trades making up your full TWAP order can be executed.",
+  "tradeSizeInput": "This sets the size of each individual trade that will be executed over the duration of your TWAP order.  ",
+  "tradeInterval": "This sets the amount of time that will elapse between each individual trade in your TWAP order.  ",
+  "confirmationModal": {
+    "toInputTooltip": "This is the estimated amount you may receive in the TWAP trade. NOTE: this is an ESTIMATE based on the current market price. Actual results will vary depending on the market conditions and the other parameters you select. ",
+    "limitOrderTooltip": "Trades will only be executed when this limit price is equal to or greater than the available market price. If this limit price is not available, some trades may not be executed if the limit price is higher than the available market prices and your order may only be partially filled. ",
+    "expiration": "This is the date and time marking the end of the period which you have selected for your TWAP order to be executed. Trade Size: The number of input tokens that will be removed from your balance and swapped for the output token in each individual trade.",
+    "minimumReceivedNoLimit": "Since you have chosen a market order without a limit price, there is no set minimum number of tokens. The actual amount received is subject to market conditions.",
+    "minimumReceivedWithLimit": "This is the minimum number of tokens that may be received. NOTE: This minimum only refers to executed trades. Some trades may not be executed if the limit price is higher than the available market prices and your order may only be partially filled. Total Trades: The total number of individual trades that will be scheduled as part of your TWAP order. Note that in limit orders, not all trades that are scheduled will be executed.Trade Interval: The amount of time that will elapse between each trade in your order.",
+    "totalTrades": "The total number of individual trades that will be scheduled as part of your TWAP order. Note that in limit orders, not all trades that are scheduled will be executed.",
+    "tradeInterval": "The amount of time that will elapse between each trade in your order.",
+    "disclaimer": {
+      "p1": "TWAP orders are executed in smaller trades over a specified period of time and are subject to market conditions and other risks.",
+      "p2LimitOrderNotSelected": "You have not selected a limit price, and your trade will execute at whatever market price is available. Your trade may therefore be executed at a price that is significantly different from the current market price, which could result in significant losses.",
+      "p2LimitOrderSelected": "Your trade may be executed at a price that is significantly different from the current market price, which could result in significant losses. If the available market price is lower than the limit price you have set, some of the trades of your TWAP order may not be executed, resulting in a partially filled order.",
+      "p3": "The TWAP trades are based on a decentralized TWAP protocol that utilizes off-chain takers which compete to fill orders. These takers are entitled to request a fee, which the protocol removes for the winning taker from the output tokens. Accordingly, the amount of output tokens you will receive may vary in accordance with taker behavior. ",
+      "p4": "Takers may take into account gas fees for your transactions when setting their fees, which may result in fluctuations in the fee amounts. ",
+      "p5": "Note that the protocol has been designed such that the presence of one honest taker (i.e, a taker who charges only reimbursement for gas fees) should result in an output amount that is as close as possible to spot market prices. QuickSwap and Orbs have implemented automated, decentralized “honest takers”, however, these features are in beta and their use are subject to risks.",
+      "p6": "This TWAP order will be executed using that is in beta and its use is at your own risk. You can read more about the TWAP protocol here {{link}}.",
+      "p7": "Use of this feature is subject to the terms and conditions set forth here {{link}}."
+    }
+  }
 }
