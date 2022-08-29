@@ -343,12 +343,12 @@
   "errorConnectRefresh": "Error connecting. Try refreshing the page.",
   "newToMatic": "New to Polygon?",
   "learnWallet": "Learn about Wallets",
-  "twapToInput": "This is the estimated amount you may receive in the TWAP trade. NOTE: this is an ESTIMATE based on the current market price. Actual results will vary depending on the market conditions and the other parameters you select. ",
+  "twapToInput": " This is the estimated amount you may receive in the TWAP trade. NOTE: this is an ESTIMATE based on the current market price. Actual results will vary depending on the market conditions and the other parameters you select.",
   "twapToInputLimitOrder": "This is the estimated amount you may receive in the TWAP trade. NOTE: this is an ESTIMATE based on the limit price and assuming that all trades are executed. Actual results will vary depending on the market conditions and the other parameters you select.",
   "limitPriceOff": "You have the option to set a “limit price” for your order. If you do not select this option, each trade in your TWAP order will execute at the available market price.",
   "limitPriceOn": "This sets the lowest price for trades in your TWAP order. Trades will ONLY be executed when this limit price is greater than or equal to the available market price. If this limit price is not available, some trades may not be executed if the limit price is higher than the available market price and your order may only be partially filled. ",
-  "durationInput": "The total time during which the total amount of individual trades making up your full TWAP order can be executed.",
-  "tradeSizeInput": "This sets the size of each individual trade that will be executed over the duration of your TWAP order.  ",
+  "durationInput": "The maximum time during which the total amount of individual trades making up your full TWAP order can be executed. Note that depending on your parameters, your order may be filled earlier than this time, partially filled or not filled at all.",
+  "tradeSizeInput": "This sets the amount of time that will elapse between each individual trade in your TWAP order. Note that if you choose to set this parameter manually, you will also need to set the trade size and duration manually as well.",
   "tradeInterval": "This sets the amount of time that will elapse between each individual trade in your TWAP order.  ",
   "confirmationToInputTooltip": "This is the estimated amount you may receive in the TWAP trade. NOTE: this is an ESTIMATE based on the current market price. Actual results will vary depending on the market conditions and the other parameters you select. ",
   "confirmationLimitOrderTooltip": "Trades will only be executed when this limit price is equal to or greater than the available market price. If this limit price is not available, some trades may not be executed if the limit price is higher than the available market prices and your order may only be partially filled. ",
@@ -364,5 +364,6 @@
   "disclaimer_p4": "Takers may take into account gas fees for your transactions when setting their fees, which may result in fluctuations in the fee amounts. ",
   "disclaimer_p5": "Note that the protocol has been designed such that the presence of one honest taker (i.e, a taker who charges only reimbursement for gas fees) should result in an output amount that is as close as possible to spot market prices. QuickSwap and Orbs have implemented automated, decentralized “honest takers”, however, these features are in beta and their use are subject to risks.",
   "disclaimer_p6": "This TWAP order will be executed using that is in beta and its use is at your own risk. You can read more about the TWAP protocol here {{link}}.",
-  "disclaimer_p7": "Use of this feature is subject to the terms and conditions set forth here {{link}}."
+  "disclaimer_p7": "Use of this feature is subject to the terms and conditions set forth here {{link}}.",
+  "twapTab": "Time-Weighted Average Price strategy (breaks your order into smaller trades and executes them over time)."
 }
