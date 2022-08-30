@@ -351,10 +351,10 @@
   "tradeSizeInput": "This sets the size of each individual trade that will be executed over the duration of your TWAP order.",
   "tradeInterval": "This sets the amount of time that will elapse between each individual trade in your TWAP order. Note that if you choose to set this parameter manually, you will also need to set the trade size and duration manually as well.",
   "confirmationToInputTooltip": "This is the estimated amount you may receive in the TWAP trade. NOTE: this is an ESTIMATE based on the current market price. Actual results will vary depending on the market conditions and the other parameters you select. ",
-  "confirmationLimitOrderTooltip": "Trades will only be executed when this limit price is equal to or greater than the available market price. If this limit price is not available, some trades may not be executed if the limit price is higher than the available market prices and your order may only be partially filled. ",
-  "confirmationExpiration": "This is the date and time marking the end of the period which you have selected for your TWAP order to be executed. Trade Size: The number of input tokens that will be removed from your balance and swapped for the output token in each individual trade.",
+  "confirmationLimitOrderTooltip": "Trades will only be executed when this limit price is equal to or greater than the available market price. Some trades may not be executed if the limit price is higher than the available market prices and your order may only be partially filled. ",
+  "confirmationExpiration": "This is the date and time marking the end of the period which you have selected for your TWAP order to be executed.",
   "confirmationMinimumReceivedNoLimit": "Since you have chosen a market order without a limit price, there is no set minimum number of tokens. The actual amount received is subject to market conditions.",
-  "confirmationMinimumReceivedWithLimit": "This is the minimum number of tokens that may be received. NOTE: This minimum only refers to executed trades. Some trades may not be executed if the limit price is higher than the available market prices and your order may only be partially filled. Total Trades: The total number of individual trades that will be scheduled as part of your TWAP order. Note that in limit orders, not all trades that are scheduled will be executed.Trade Interval: The amount of time that will elapse between each trade in your order.",
+  "confirmationMinimumReceivedWithLimit": "This is the minimum number of tokens that may be received. NOTE: This minimum only refers to executed trades. Some trades may not be executed if the limit price is higher than the available market prices and your order may only be partially filled.",
   "confirmationTotalTrades": "The total number of individual trades that will be scheduled as part of your TWAP order. Note that in limit orders, not all trades that are scheduled will be executed.",
   "confirmationTradeInterval": "The amount of time that will elapse between each trade in your order.",
   "disclaimer_p1": "TWAP orders are executed in smaller trades over a specified period of time and are subject to market conditions and other risks.",
@@ -365,5 +365,6 @@
   "disclaimer_p5": "Note that the protocol has been designed such that the presence of one honest taker (i.e, a taker who charges only reimbursement for gas fees) should result in an output amount that is as close as possible to spot market prices. QuickSwap and Orbs have implemented automated, decentralized “honest takers”, however, these features are in beta and their use are subject to risks.",
   "disclaimer_p6": "This TWAP order will be executed using that is in beta and its use is at your own risk. You can read more about the TWAP protocol here <Link>link</Link>.",
   "disclaimer_p7": "Use of this feature is subject to the terms and conditions set forth here <Link>link</Link>.",
-  "twapTab": "Time-Weighted Average Price strategy (breaks your order into smaller trades and executes them over time)."
+  "twapTab": "Time-Weighted Average Price strategy (breaks your order into smaller trades and executes them over time).",
+  "confirmationTradeSize": "The number of input tokens that will be removed from your balance and swapped for the output token in each individual trade."
 }
