@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/twap-quickswap-ui-alpha/static/css/main.fa96bf56.chunk.css",
-    "main.js": "/twap-quickswap-ui-alpha/static/js/main.c6bdd696.chunk.js",
-    "main.js.map": "/twap-quickswap-ui-alpha/static/js/main.c6bdd696.chunk.js.map",
+    "main.js": "/twap-quickswap-ui-alpha/static/js/main.da646050.chunk.js",
+    "main.js.map": "/twap-quickswap-ui-alpha/static/js/main.da646050.chunk.js.map",
     "runtime-main.js": "/twap-quickswap-ui-alpha/static/js/runtime-main.2ab29533.js",
     "runtime-main.js.map": "/twap-quickswap-ui-alpha/static/js/runtime-main.2ab29533.js.map",
     "static/css/2.09dc6558.chunk.css": "/twap-quickswap-ui-alpha/static/css/2.09dc6558.chunk.css",
@@ -434,6 +434,6 @@
     "static/css/2.09dc6558.chunk.css",
     "static/js/2.32ca24e0.chunk.js",
     "static/css/main.fa96bf56.chunk.css",
-    "static/js/main.c6bdd696.chunk.js"
+    "static/js/main.da646050.chunk.js"
   ]
 }
