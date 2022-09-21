@@ -10,12 +10,15 @@ import {
   GelatoLimitOrdersHistoryPanel,
 } from '@gelatonetwork/limit-orders-react';
 import { Trans, useTranslation } from 'react-i18next';
+import Twap from './Twap/Twap';
+import InfoTooltip from './Twap/InfoTooltip';
 
 const SWAP_NORMAL = 0;
 const SWAP_LIMIT = 1;
+const TWAP = 2;
 
 const SwapMain: React.FC = () => {
-  const [swapIndex, setSwapIndex] = useState(SWAP_NORMAL);
+  const [swapIndex, setSwapIndex] = useState(TWAP);
   const [openSettingsModal, setOpenSettingsModal] = useState(false);
   const { isProMode, updateIsProMode } = useIsProMode();
 
@@ -62,6 +65,16 @@ const SwapMain: React.FC = () => {
             onClick={() => setSwapIndex(SWAP_LIMIT)}
           >
             <p>{t('limit')}</p>
+          </Box>
+          <Box
+            className={`${
+              swapIndex === TWAP ? 'activeSwap' : ''
+            } swapItem headingItem ${isProMode ? 'border-right' : ''}`}
+            onClick={() => setSwapIndex(TWAP)}
+          >
+            <InfoTooltip text={t('twapTab')}>
+              <p>{t('twap')}</p>
+            </InfoTooltip>
           </Box>
         </Box>
         <Box my={1} className='flex items-center'>
@@ -114,6 +127,7 @@ const SwapMain: React.FC = () => {
             </Box>
           </Box>
         )}
+        {swapIndex === TWAP && <Twap />}
       </Box>
     </>
   );

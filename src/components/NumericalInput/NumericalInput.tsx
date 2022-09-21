@@ -12,6 +12,7 @@ export const Input = React.memo(function InnerInput({
   color,
   fontWeight,
   align,
+  prefix,
   ...rest
 }: {
   value: string | number;
@@ -19,7 +20,7 @@ export const Input = React.memo(function InnerInput({
   error?: boolean;
   fontSize?: number;
   fontWeight?: string | number;
-  align?: 'right' | 'left';
+  align?: 'right' | 'left' | 'center';
 } & Omit<React.HTMLProps<HTMLInputElement>, 'ref' | 'onChange' | 'as'>) {
   const enforcer = (nextUserInput: string) => {
     if (nextUserInput === '' || inputRegex.test(escapeRegExp(nextUserInput))) {
@@ -31,7 +32,7 @@ export const Input = React.memo(function InnerInput({
     <input
       {...rest}
       className='styledInput'
-      value={value}
+      value={prefix ? `${prefix} ${value}` : value}
       style={{ textAlign: align, color, fontSize, fontWeight }}
       onChange={(event) => {
         // replace commas with periods, because uniswap exclusively uses period as the decimal separator

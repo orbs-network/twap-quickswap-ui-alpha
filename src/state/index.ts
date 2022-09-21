@@ -17,6 +17,7 @@ import dualFarms from './dualfarms/reducer';
 import syrups from './syrups/reducer';
 import burn from './burn/reducer';
 import multicall from './multicall/reducer';
+import twap from './twap/reducer';
 
 const PERSISTED_KEYS: string[] = [
   'user',
@@ -42,6 +43,7 @@ const store = configureStore({
     dualFarms,
     syrups,
     ...gelatoReducers,
+    twap,
   },
   middleware: (getDefaultMiddleware) => [
     ...getDefaultMiddleware({ serializableCheck: false, thunk: false }),

@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { ReactNode, useCallback, useState } from 'react';
 import { Currency } from '@uniswap/sdk';
 import { Box } from '@material-ui/core';
 import { useCurrencyBalance } from 'state/wallet/hooks';
@@ -8,6 +8,8 @@ import useUSDCPrice from 'utils/useUSDCPrice';
 import { formatTokenAmount } from 'utils';
 import 'components/styles/CurrencyInput.scss';
 import { useTranslation } from 'react-i18next';
+import { useTwapState } from 'state/twap/hooks';
+import InfoTooltip from 'pages/SwapPage/Twap/InfoTooltip';
 
 interface CurrencyInputProps {
   title?: string;
@@ -23,6 +25,9 @@ interface CurrencyInputProps {
   showPrice?: boolean;
   bgClass?: string;
   id?: string;
+  disabled?: boolean;
+  tooltip?: string | ReactNode;
+  prefix?: string;
 }
 
 const CurrencyInput: React.FC<CurrencyInputProps> = ({
@@ -39,6 +44,9 @@ const CurrencyInput: React.FC<CurrencyInputProps> = ({
   showPrice,
   bgClass,
   id,
+  disabled,
+  tooltip,
+  prefix,
 }) => {
   const { t } = useTranslation();
   const [modalOpen, setModalOpen] = useState(false);
@@ -47,6 +55,7 @@ const CurrencyInput: React.FC<CurrencyInputProps> = ({
     account ?? undefined,
     currency,
   );
+
   const usdPrice = Number(useUSDCPrice(currency)?.toSignificant() ?? 0);
 
   const handleOpenModal = useCallback(() => {
@@ -60,7 +69,13 @@ const CurrencyInput: React.FC<CurrencyInputProps> = ({
         'bg-secondary2'}`}
     >
       <Box className='flex justify-between' mb={2}>
-        <p>{title || `${t('youPay')}:`}</p>
+        {tooltip ? (
+          <InfoTooltip text={tooltip}>
+            <p>{title || `${t('youPay')}:`}</p>
+          </InfoTooltip>
+        ) : (
+          <p>{title || `${t('youPay')}:`}</p>
+        )}
         <Box display='flex'>
           {account && currency && showHalfButton && (
             <Box className='maxWrapper' onClick={onHalf}>
@@ -92,9 +107,11 @@ const CurrencyInput: React.FC<CurrencyInputProps> = ({
         </Box>
         <Box className='inputWrapper'>
           <NumericalInput
+            disabled={disabled}
             value={amount}
             align='right'
             placeholder='0.00'
+            prefix={amount ? prefix : undefined}
             onUserInput={(val) => {
               setAmount(val);
             }}

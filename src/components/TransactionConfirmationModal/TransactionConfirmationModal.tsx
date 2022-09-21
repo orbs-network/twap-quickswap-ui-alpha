@@ -1,5 +1,5 @@
 import { ChainId } from '@uniswap/sdk';
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import { Box, Button, CircularProgress } from '@material-ui/core';
 import { CustomModal } from 'components';
 import { ReactComponent as CloseIcon } from 'assets/images/CloseIcon.svg';
@@ -153,6 +153,7 @@ interface ConfirmationModalProps {
   pendingText: string;
   modalContent: string;
   txPending?: boolean;
+  style?: CSSProperties;
 }
 
 const TransactionConfirmationModal: React.FC<ConfirmationModalProps> = ({
@@ -164,6 +165,7 @@ const TransactionConfirmationModal: React.FC<ConfirmationModalProps> = ({
   pendingText,
   content,
   modalContent,
+  style,
 }) => {
   const { chainId } = useActiveWeb3React();
 
@@ -171,7 +173,7 @@ const TransactionConfirmationModal: React.FC<ConfirmationModalProps> = ({
 
   // confirmation screen
   return (
-    <CustomModal open={isOpen} onClose={onDismiss}>
+    <CustomModal style={style} open={isOpen} onClose={onDismiss}>
       <img src={ModalBg} alt='Modal Back' className='txModalBG' />
       <Box position='relative' zIndex={2}>
         {attemptingTxn ? (

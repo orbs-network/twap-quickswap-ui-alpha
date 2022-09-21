@@ -92,7 +92,6 @@ export function useInitTransak() {
           },
         }),
       );
-      console.log(orderData);
       transak.close();
     });
   };

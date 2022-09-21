@@ -15,8 +15,9 @@ i18next
       useSuspense: true,
     },
     fallbackLng: 'en',
+    defaultNS: 'en',
     preload: ['en'],
-    keySeparator: false,
+    // keySeparator: false,
     interpolation: { escapeValue: false },
   });
 

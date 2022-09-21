@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import { Modal, Box, Backdrop, Fade } from '@material-ui/core';
 import 'components/styles/CustomModal.scss';
 
@@ -8,6 +8,7 @@ interface CustomModalProps {
   children: any;
   background?: string;
   overflow?: string;
+  style?: CSSProperties;
 }
 
 const CustomModal: React.FC<CustomModalProps> = ({
@@ -16,6 +17,7 @@ const CustomModal: React.FC<CustomModalProps> = ({
   children,
   background,
   overflow,
+  style,
 }) => {
   return (
     <Modal
@@ -25,7 +27,12 @@ const CustomModal: React.FC<CustomModalProps> = ({
       BackdropProps={{ timeout: 500 }}
     >
       <Fade in={open}>
-        <Box className='modalWrapper' bgcolor={background} overflow={overflow}>
+        <Box
+          style={style}
+          className='modalWrapper'
+          bgcolor={background}
+          overflow={overflow}
+        >
           {children}
         </Box>
       </Fade>

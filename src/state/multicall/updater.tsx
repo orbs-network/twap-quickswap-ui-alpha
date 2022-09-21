@@ -235,16 +235,6 @@ export default function Updater(): null {
               { erroredCalls: [], results: {} },
             );
 
-            // dispatch any new results
-            if (Object.keys(results).length > 0)
-              dispatch(
-                updateMulticallResults({
-                  chainId,
-                  results,
-                  blockNumber: latestBlockNumber,
-                }),
-              );
-
             // dispatch any errored calls
             if (erroredCalls.length > 0) {
               console.debug('Calls errored in fetch', erroredCalls);
@@ -255,7 +245,18 @@ export default function Updater(): null {
                   fetchingBlockNumber: latestBlockNumber,
                 }),
               );
+              return;
             }
+
+            // dispatch any new results
+            if (Object.keys(results).length > 0)
+              dispatch(
+                updateMulticallResults({
+                  chainId,
+                  results,
+                  blockNumber: latestBlockNumber,
+                }),
+              );
           })
           .catch((error: any) => {
             if (error.isCancelledError) {
